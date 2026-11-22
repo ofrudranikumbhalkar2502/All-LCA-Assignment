@@ -1,0 +1,41 @@
+#include<stdio.h>
+struct Sample
+{
+int sampleID;
+char sampleType[30];
+float initialMass;
+float finalMass;
+float percentageChange;
+};
+int main()
+{
+struct Sample s[100];
+int n,i;
+printf("Enter number of Samples:");
+scanf("%d",&n);
+for(i = 0; i < n; i++)
+{
+printf("\nEnter details of Sample %d\n",i+1);
+printf("Enter Sample ID:");
+scanf("%d", &s[i].sampleID);
+printf("Enter Sample Type:");
+scanf("%29s",s[i].sampleType);
+printf("enter initial Mass:");
+scanf("%f",&s[i].initialMass);
+printf("enter final Mass:");
+scanf("%f",&s[i].finalMass);
+s[i].percentageChange =
+((s[i]. finalMass - s[i].initialMass)
+/ s[i]. initialMass) * 100;}
+printf("\n---BIOENGINEERING SAMPLE REPORT---\n");
+for(i = 0; i < n;i++)
+{
+printf("\nSample ID:%d",s[i].sampleID);
+printf("\nSample type:%s",s[i].sampleType);
+printf("\nInitialMass:%.2f",s[i].initialMass);
+printf("\nFinalMass:%.2f",s[i].finalMass);
+printf("\nPercentage Mass Change:%.2f%%\n",
+s[i]. percentageChange);
+}
+  return 0;
+  }
